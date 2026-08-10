@@ -11,6 +11,7 @@
         </div>
     </section>
 
+    {{-- KETERANGAN JURUSAN + STATISTIK --}}
     <section class="section-generic">
         <div class="container">
             <div class="row g-5 align-items-start">
@@ -67,6 +68,7 @@
         </div>
     </section>
 
+    {{-- GALERI JURUSAN --}}
     <section class="section-generic bg-soft">
         <div class="container">
             <div class="section-header text-center" data-aos="fade-up">
@@ -94,12 +96,14 @@
         </div>
     </section>
 
+    {{-- LIGHTBOX MODAL --}}
     <div class="lightbox-modal" id="lightboxModal">
         <span class="lightbox-close" id="lightboxClose"><i class="bi bi-x-lg"></i></span>
         <img src="" alt="" id="lightboxImage">
         <p id="lightboxCaption"></p>
     </div>
 
+    {{-- JURUSAN LAIN --}}
     <section class="section-generic">
         <div class="container">
             <div class="section-header text-center" data-aos="fade-up">

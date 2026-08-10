@@ -11,8 +11,8 @@ return new class extends Migration
         Schema::create('prestasi', function (Blueprint $table) {
             $table->id();
             $table->string('nama_prestasi');
-            $table->string('tingkat');
-            $table->string('kategori')->nullable();
+            $table->string('tingkat'); // Akademik / Non Akademik, atau Sekolah/Kota/Provinsi/Nasional
+            $table->string('kategori')->nullable(); // Akademik / Non Akademik
             $table->year('tahun');
             $table->text('deskripsi')->nullable();
             $table->timestamps();

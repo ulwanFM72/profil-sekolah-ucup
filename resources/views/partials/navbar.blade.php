@@ -33,7 +33,9 @@
                     <a class="nav-link {{ request()->routeIs('achievement') ? 'active' : '' }}" href="{{ route('achievement') }}">Prestasi</a>
                 </li>
                 <li class="nav-item ms-lg-2">
-                    <a class="btn btn-primary-gradient rounded-pill px-4" href="{{ route('profile') }}">Info PPDB</a>
+                    <button type="button" class="btn btn-primary-gradient rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#ppdbModal">
+                        Info PPDB
+                    </button>
                 </li>
                 <li class="nav-item ms-lg-2">
                     <button type="button" class="btn btn-outline-primary-soft rounded-pill px-4 d-flex align-items-center gap-1" data-bs-toggle="modal" data-bs-target="#loginModal">
@@ -44,3 +46,25 @@
         </div>
     </div>
 </nav>
+
+<div class="modal fade" id="ppdbModal" tabindex="-1" aria-labelledby="ppdbModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ppdbModalLabel">Info PPDB</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Jadwal Pendaftaran</strong><br>Gelombang 1: 1 - 28 Februari</p>
+                <p><strong>Syarat Pendaftaran</strong></p>
+                <ul>
+                    <li>Fotokopi Akta Kelahiran</li>
+                    <li>Fotokopi Kartu Keluarga</li>
+                    <li>Fotokopi Rapor SMP/MTs (semester 1-5)</li>
+                    <li>Pas foto berwarna terbaru 3x4</li>
+                </ul>
+                <p class="mb-0">Untuk info lebih lanjut, silakan hubungi panitia PPDB di sekolah.</p>
+            </div>
+        </div>
+    </div>
+</div>

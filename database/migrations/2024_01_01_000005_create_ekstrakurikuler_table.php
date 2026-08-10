@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('jadwal');
             $table->text('deskripsi');
             $table->string('gambar')->nullable();
-            $table->string('kategori')->nullable();
+            $table->string('kategori')->nullable(); // untuk badge kategori
             $table->timestamps();
         });
     }

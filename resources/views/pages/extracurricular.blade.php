@@ -6,7 +6,6 @@
 
     <section class="page-header">
         <div class="container text-center" data-aos="fade-up">
-            <span class="section-tag">Kembangkan Bakat & Minat</span>
             <h1 class="page-title">Ekstrakurikuler</h1>
             <p class="page-subtitle">Beragam kegiatan untuk mengasah potensi siswa di luar akademik</p>
         </div>

@@ -6,6 +6,7 @@
 
     @include('partials.hero')
 
+    {{-- STATISTIK SEKOLAH --}}
     <section class="section-stats">
         <div class="container">
             <div class="row g-4">
@@ -41,6 +42,7 @@
         </div>
     </section>
 
+    {{-- BERITA TERBARU --}}
     <section class="section-news">
         <div class="container">
             <div class="section-header text-center" data-aos="fade-up">
@@ -73,6 +75,7 @@
         </div>
     </section>
 
+    {{-- PRESTASI SEKOLAH --}}
     <section class="section-achievement">
         <div class="container">
             <div class="section-header text-center" data-aos="fade-up">
@@ -97,6 +100,7 @@
         </div>
     </section>
 
+    {{-- GALERI KEGIATAN --}}
     <section class="section-gallery-preview">
         <div class="container">
             <div class="section-header text-center" data-aos="fade-up">
@@ -126,6 +130,7 @@
         </div>
     </section>
 
+    {{-- TESTIMONI --}}
     <section class="section-testimonial">
         <div class="container">
             <div class="section-header text-center" data-aos="fade-up">

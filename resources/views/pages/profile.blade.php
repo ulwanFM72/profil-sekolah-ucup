@@ -6,12 +6,12 @@
 
     <section class="page-header">
         <div class="container text-center" data-aos="fade-up">
-            <span class="section-tag">Tentang Kami</span>
             <h1 class="page-title">Profil Sekolah</h1>
             <p class="page-subtitle">Mengenal lebih dekat sejarah, visi misi, dan identitas sekolah kami</p>
         </div>
     </section>
 
+    {{-- SEJARAH / VISI / MISI --}}
     <section class="section-generic">
         <div class="container">
             <div class="row g-4">
@@ -19,7 +19,7 @@
                     <div class="glass-card content-card h-100">
                         <i class="bi bi-clock-history content-icon"></i>
                         <h4>Sejarah Sekolah</h4>
-                        <p>SMK Negeri 1 Cijati didirikan pada tahun 2008 sebagai wujud komitmen pemerintah
+                        <p>SMA Negeri Harapan Bangsa didirikan pada tahun 1985 sebagai wujud komitmen pemerintah
                             dalam menyediakan pendidikan menengah atas yang berkualitas. Sejak awal berdiri, sekolah
                             terus berkembang baik dari segi fasilitas, kurikulum, maupun prestasi siswa hingga
                             menjadi salah satu sekolah unggulan di daerah ini.</p>
@@ -29,7 +29,7 @@
                     <div class="glass-card content-card h-100">
                         <i class="bi bi-flag-fill content-icon"></i>
                         <h4>Sambutan Kepala Sekolah</h4>
-                        <p>"Selamat datang di SMK Negeri 1 Cijati. Kami berkomitmen untuk membentuk generasi
+                        <p>"Selamat datang di SMA Negeri Harapan Bangsa. Kami berkomitmen untuk membentuk generasi
                             yang tidak hanya unggul secara akademik, tetapi juga memiliki karakter yang kuat dan
                             siap menghadapi tantangan masa depan." — {{ $kepalaSekolah->nama ?? 'Kepala Sekolah' }}</p>
                     </div>
@@ -58,10 +58,10 @@
         </div>
     </section>
 
+    {{-- INFORMASI SEKOLAH --}}
     <section class="section-generic bg-soft">
         <div class="container">
             <div class="section-header text-center" data-aos="fade-up">
-                <span class="section-tag">Data Resmi</span>
                 <h2 class="section-title">Informasi Sekolah</h2>
             </div>
 
@@ -95,10 +95,10 @@
         </div>
     </section>
 
+    {{-- STRUKTUR ORGANISASI --}}
     <section class="section-generic">
         <div class="container">
             <div class="section-header text-center" data-aos="fade-up">
-                <span class="section-tag">Guru & Staf Tata Usaha</span>
                 <h2 class="section-title">Struktur Organisasi</h2>
             </div>
 
@@ -116,15 +116,15 @@
         </div>
     </section>
 
+    {{-- DENAH LOKASI --}}
     <section class="section-generic bg-soft">
         <div class="container">
             <div class="section-header text-center" data-aos="fade-up">
-                <span class="section-tag">Kunjungi Kami</span>
                 <h2 class="section-title">Denah Lokasi Sekolah</h2>
             </div>
             <div class="map-wrapper" data-aos="zoom-in">
                 <iframe src="https://maps.google.com/maps?q={{ $sekolah['maps_lat'] }},{{ $sekolah['maps_lng'] }}&z=17&output=embed"
-    width="100%" height="420" style="border:0;" allowfullscreen loading="lazy"></iframe>
+                    width="100%" height="420" style="border:0;" allowfullscreen loading="lazy"></iframe>
             </div>
         </div>
     </section>

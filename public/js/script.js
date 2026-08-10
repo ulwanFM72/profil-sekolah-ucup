@@ -1,12 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const loadingScreen = document.getElementById("loading-screen");
-    window.addEventListener("load", function () {
-        setTimeout(
-            () => loadingScreen && loadingScreen.classList.add("hidden"),
-            300,
-        );
-    });
-
+    /* ============================================================
+       AOS - SCROLL REVEAL ANIMATION
+       ============================================================ */
     if (typeof AOS !== "undefined") {
         AOS.init({
             duration: 800,
@@ -16,6 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    /* ============================================================
+       STICKY / TRANSPARENT NAVBAR ON SCROLL
+       ============================================================ */
     const navbar = document.getElementById("mainNavbar");
     function handleNavbarScroll() {
         if (!navbar) return;
@@ -28,6 +26,9 @@ document.addEventListener("DOMContentLoaded", function () {
     handleNavbarScroll();
     window.addEventListener("scroll", handleNavbarScroll);
 
+    /* ============================================================
+       SMOOTH SCROLL UNTUK ANCHOR LINK
+       ============================================================ */
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
             const targetId = this.getAttribute("href");
@@ -44,6 +45,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    /* ============================================================
+       COUNTER ANIMATION (Statistik Sekolah)
+       ============================================================ */
     const counters = document.querySelectorAll(".stat-number");
     const counterObserver = new IntersectionObserver(
         (entries) => {
@@ -66,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         function update(now) {
             const progress = Math.min((now - startTime) / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
+            const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
             el.textContent = Math.floor(eased * target).toLocaleString("id-ID");
             if (progress < 1) {
                 requestAnimationFrame(update);
@@ -77,6 +81,9 @@ document.addEventListener("DOMContentLoaded", function () {
         requestAnimationFrame(update);
     }
 
+    /* ============================================================
+       BACK TO TOP BUTTON
+       ============================================================ */
     const backToTop = document.getElementById("backToTop");
     if (backToTop) {
         window.addEventListener("scroll", function () {
@@ -91,6 +98,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    /* ============================================================
+       RIPPLE EFFECT PADA TOMBOL
+       ============================================================ */
     document.querySelectorAll(".ripple").forEach((btn) => {
         btn.addEventListener("click", function (e) {
             const circle = document.createElement("span");
@@ -110,6 +120,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    /* ============================================================
+       GALERI: FILTER KATEGORI
+       ============================================================ */
     const filterButtons = document.querySelectorAll(".filter-btn");
     const galleryItems = document.querySelectorAll(".gallery-item");
 
@@ -131,6 +144,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    /* ============================================================
+       LIGHTBOX GALERI
+       ============================================================ */
     const lightboxModal = document.getElementById("lightboxModal");
     const lightboxImage = document.getElementById("lightboxImage");
     const lightboxCaption = document.getElementById("lightboxCaption");
@@ -163,6 +179,9 @@ document.addEventListener("DOMContentLoaded", function () {
             lightboxModal.classList.remove("active");
     });
 
+    /* ============================================================
+       IMAGE LAZY LOADING SKELETON
+       ============================================================ */
     document.querySelectorAll('img[loading="lazy"]').forEach((img) => {
         img.classList.add("lazy-loading");
         img.addEventListener("load", () =>

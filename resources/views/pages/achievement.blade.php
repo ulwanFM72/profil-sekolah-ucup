@@ -6,7 +6,6 @@
 
     <section class="page-header">
         <div class="container text-center" data-aos="fade-up">
-            <span class="section-tag">Kebanggaan Kami</span>
             <h1 class="page-title">Prestasi Sekolah</h1>
             <p class="page-subtitle">Rangkaian pencapaian akademik dan non akademik siswa-siswi kami</p>
         </div>

@@ -5,8 +5,7 @@
     <div class="container">
         <div class="row align-items-center min-vh-100 py-5">
             <div class="col-lg-6" data-aos="fade-right" data-aos-duration="900">
-                <span class="hero-badge">🎓 Sekolah Unggulan Terakreditasi A</span>
-                <h1 class="hero-title">SMK Negeri <span>1 Cijati</span></h1>
+                <h1 class="hero-title">SMK Negeri 1 <span>Cijati</span></h1>
                 <p class="hero-motto">"Cerdas, Berkarakter, Berdaya Saing Global"</p>
                 <p class="hero-desc">
                     Mewujudkan generasi pelajar yang unggul secara akademik, memiliki karakter kuat, dan siap

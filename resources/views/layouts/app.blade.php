@@ -23,13 +23,6 @@
 </head>
 <body>
 
-    {{-- Loading Screen --}}
-    <div id="loading-screen">
-        <div class="loader-content">
-            <div class="loader-ring"></div>
-            <p>Memuat halaman...</p>
-        </div>
-    </div>
 
     @include('partials.navbar')
 

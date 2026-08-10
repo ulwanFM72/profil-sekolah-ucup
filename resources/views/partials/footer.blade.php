@@ -3,7 +3,7 @@
         <div class="row g-4">
             <div class="col-lg-4">
                 <div class="d-flex align-items-center gap-2 mb-3">
-                    <img src="{{ asset('images/logo-smkn1cijati.png') }}" alt="Logo Sekolah" class="brand-logo">
+                    <span class="brand-logo"><i class="bi bi-mortarboard-fill"></i></span>
                     <span class="footer-brand">SMK Negeri 1 Cijati</span>
                 </div>
                 <p class="footer-text">Membentuk generasi cerdas, berkarakter, dan siap menghadapi masa depan melalui pendidikan yang berkualitas.</p>
@@ -40,7 +40,7 @@
                 <h6 class="footer-title">Kontak Kami</h6>
                 <ul class="footer-contact">
                     <li><i class="bi bi-geo-alt-fill"></i> Jl. Pendidikan No. 10, Bandung, Jawa Barat</li>
-                    <li><i class="bi bi-envelope-fill"></i> info@smaharapanbangsa.sch.id</li>
+                    <li><i class="bi bi-envelope-fill"></i> info@smkn1cijati.sch.id</li>
                     <li><i class="bi bi-telephone-fill"></i> (022) 123-4567</li>
                 </ul>
             </div>

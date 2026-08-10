@@ -13,6 +13,7 @@ class HomeController extends Controller
 {
     public function index()
     {
+        // Statistik sekolah untuk hero/counter section
         $statistik = [
             'jumlah_guru' => Guru::count(),
             'jumlah_siswa' => Siswa::count(),
@@ -25,10 +26,7 @@ class HomeController extends Controller
         $testimonials = Testimonial::inRandomOrder()->take(6)->get();
 
         return view('pages.home', compact(
-            'statistik',
-            'beritaTerbaru',
-            'prestasiTerbaru',
-            'testimonials'
+            'statistik', 'beritaTerbaru', 'prestasiTerbaru', 'testimonials'
         ));
     }
 }

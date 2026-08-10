@@ -12,12 +12,7 @@ class Jurusan extends Model
     protected $table = 'jurusan';
 
     protected $fillable = [
-        'nama',
-        'singkatan',
-        'slug',
-        'kepala_jurusan',
-        'deskripsi',
-        'gambar_sampul',
+        'nama', 'singkatan', 'slug', 'kepala_jurusan', 'deskripsi', 'gambar_sampul',
     ];
 
     public function galeri()
@@ -30,6 +25,7 @@ class Jurusan extends Model
         return $this->hasMany(Siswa::class);
     }
 
+    // Jumlah siswa di jurusan ini
     public function getJumlahSiswaAttribute(): int
     {
         return $this->siswa()->count();

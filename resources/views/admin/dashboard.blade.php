@@ -1,39 +1,89 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Admin | SMA Negeri Harapan Bangsa</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--light-gray); }
-        .topbar {
-            background: #fff; padding: 16px 28px; display: flex; justify-content: space-between;
-            align-items: center; box-shadow: 0 2px 10px rgba(15,23,42,0.06);
-        }
-        .topbar h1 { font-family: 'Poppins', sans-serif; font-size: 1.15rem; margin: 0; color: var(--dark-blue); }
-        .wrap { padding: 40px 28px; text-align: center; }
-        .wrap i { font-size: 3rem; color: var(--primary-dark); margin-bottom: 16px; }
-    </style>
-</head>
-<body>
-    <div class="topbar">
-        <h1><i class="bi bi-speedometer2 me-2"></i>Dashboard Admin</h1>
-        <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            <button class="btn btn-sm btn-outline-primary-soft rounded-pill px-3">
-                <i class="bi bi-box-arrow-right me-1"></i>Logout
-            </button>
-        </form>
+@extends('admin.layout')
+
+@section('title', 'Dashboard')
+@section('subtitle', 'Ringkasan konten website sekolah')
+
+@section('content')
+
+    <div class="row g-3 mb-4">
+        @php
+            $cards = [
+                ['label' => 'Berita', 'value' => $statistik['berita'], 'icon' => 'bi-newspaper', 'color' => '#38BDF8'],
+                ['label' => 'Galeri', 'value' => $statistik['galeri'], 'icon' => 'bi-images', 'color' => '#A855F7'],
+                ['label' => 'Jurusan', 'value' => $statistik['jurusan'], 'icon' => 'bi-diagram-3', 'color' => '#F59E0B'],
+                ['label' => 'Ekstrakurikuler', 'value' => $statistik['ekstrakurikuler'], 'icon' => 'bi-trophy', 'color' => '#10B981'],
+                ['label' => 'Prestasi', 'value' => $statistik['prestasi'], 'icon' => 'bi-award', 'color' => '#EC4899'],
+                ['label' => 'Testimoni', 'value' => $statistik['testimonial'], 'icon' => 'bi-chat-quote', 'color' => '#6366F1'],
+                ['label' => 'Guru & Staf', 'value' => $statistik['guru'], 'icon' => 'bi-person-badge', 'color' => '#0EA5E9'],
+                ['label' => 'Siswa', 'value' => $statistik['siswa'], 'icon' => 'bi-people', 'color' => '#14B8A6'],
+            ];
+        @endphp
+
+        @foreach ($cards as $card)
+            <div class="col-6 col-lg-3">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: {{ $card['color'] }};">
+                        <i class="bi {{ $card['icon'] }}"></i>
+                    </div>
+                    <div>
+                        <div class="stat-value">{{ $card['value'] }}</div>
+                        <div class="stat-label">{{ $card['label'] }}</div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
     </div>
 
-    <div class="wrap">
-        <i class="bi bi-check-circle"></i>
-        <h2 class="mb-2">Login berhasil, {{ auth()->user()->name }}!</h2>
-        <p class="text-muted">Modul CRUD untuk mengelola Berita, Galeri, Guru, Siswa, Ekstrakurikuler, Prestasi, Testimonial, dan Jurusan akan dibangun pada tahap berikutnya.</p>
+    <div class="row g-3">
+        <div class="col-lg-6">
+            <div class="admin-card">
+                <div class="admin-card-header">
+                    <h2 class="admin-card-title"><i class="bi bi-newspaper me-2"></i>Berita Terbaru</h2>
+                    <a href="{{ route('admin.berita.index') }}" class="btn-admin-outline">Kelola <i class="bi bi-arrow-right"></i></a>
+                </div>
+
+                @forelse ($beritaTerbaru as $item)
+                    <div class="d-flex align-items-center gap-3 py-2 {{ !$loop->last ? 'border-bottom' : '' }}">
+                        <img src="{{ $item->thumbnail ? asset('storage/'.$item->thumbnail) : 'https://placehold.co/100x100/38BDF8/FFFFFF?text=B' }}" class="table-thumb" alt="">
+                        <div class="flex-grow-1">
+                            <div class="fw-semibold" style="font-size:0.88rem;">{{ Str::limit($item->judul, 45) }}</div>
+                            <div class="text-muted" style="font-size:0.76rem;">{{ $item->tanggal->translatedFormat('d M Y') }}</div>
+                        </div>
+                    </div>
+                @empty
+                    <div class="empty-state py-3">
+                        <i class="bi bi-newspaper"></i>
+                        <p class="mb-0 small">Belum ada berita.</p>
+                    </div>
+                @endforelse
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="admin-card">
+                <div class="admin-card-header">
+                    <h2 class="admin-card-title"><i class="bi bi-award me-2"></i>Prestasi Terbaru</h2>
+                    <a href="{{ route('admin.prestasi.index') }}" class="btn-admin-outline">Kelola <i class="bi bi-arrow-right"></i></a>
+                </div>
+
+                @forelse ($prestasiTerbaru as $item)
+                    <div class="d-flex align-items-center gap-3 py-2 {{ !$loop->last ? 'border-bottom' : '' }}">
+                        <div class="stat-icon" style="width:40px;height:40px;font-size:1rem;background:#FEF3C7;color:#B45309;">
+                            <i class="bi bi-trophy"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <div class="fw-semibold" style="font-size:0.88rem;">{{ Str::limit($item->nama_prestasi, 45) }}</div>
+                            <div class="text-muted" style="font-size:0.76rem;">{{ $item->tingkat }} &middot; {{ $item->tahun }}</div>
+                        </div>
+                    </div>
+                @empty
+                    <div class="empty-state py-3">
+                        <i class="bi bi-award"></i>
+                        <p class="mb-0 small">Belum ada data prestasi.</p>
+                    </div>
+                @endforelse
+            </div>
+        </div>
     </div>
-</body>
-</html>
+
+@endsection

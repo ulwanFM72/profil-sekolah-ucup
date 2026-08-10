@@ -6,7 +6,6 @@
 
     <section class="page-header">
         <div class="container text-center" data-aos="fade-up">
-            <span class="section-tag">Informasi Terkini</span>
             <h1 class="page-title">Berita & Pengumuman</h1>
             <p class="page-subtitle">Ikuti kabar dan agenda terbaru dari sekolah kami</p>
         </div>

@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('galeri', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
-            $table->string('kategori');
+            $table->string('kategori'); // Pembelajaran, Upacara, Perlombaan, Ekstrakurikuler, Wisuda, Kegiatan Sosial
             $table->string('gambar');
             $table->timestamps();
         });

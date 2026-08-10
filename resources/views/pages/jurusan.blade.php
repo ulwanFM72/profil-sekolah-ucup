@@ -6,7 +6,6 @@
 
     <section class="page-header">
         <div class="container text-center" data-aos="fade-up">
-            <span class="section-tag">Kompetensi Keahlian</span>
             <h1 class="page-title">Jurusan / Program Keahlian</h1>
             <p class="page-subtitle">Empat kompetensi keahlian unggulan yang kami sediakan untuk mempersiapkan siswa siap kerja, siap kuliah, dan siap berwirausaha</p>
         </div>
